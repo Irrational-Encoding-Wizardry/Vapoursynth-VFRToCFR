@@ -205,7 +205,8 @@ static void VS_CC VFRToCFRCreate(const VSMap *in, VSMap *out, void *userData, VS
 					if (abs(mid - choicesTemp[j].end) < shortest) {
 						shortest = abs(mid - choicesTemp[j].end);
 					}
-					if (mid > choicesTemp[j].start && abs(mid - choicesTemp[j].start) > static_cast<double>(EPSILON) && mid < choicesTemp[j].end && abs(mid - choicesTemp[j].end) > static_cast<double>(EPSILON)) {
+					if (mid > choicesTemp[j].start && abs(mid - choicesTemp[j].start) > static_cast<double>(EPSILON) && mid < choicesTemp[j].end
+						&& abs(mid - choicesTemp[j].end) > static_cast<double>(EPSILON)) {
 						hasMid = choicesTemp[j];
 						found = true;
 						break;
@@ -217,7 +218,8 @@ static void VS_CC VFRToCFRCreate(const VSMap *in, VSMap *out, void *userData, VS
 				}
 				else {
 					for (unsigned int j = 0; j < choicesTemp.size(); j++) {
-						if (abs(shortest - abs(mid - choicesTemp[j].start)) > static_cast<double>(EPSILON) && abs(shortest - abs(mid - choicesTemp[j].end)) > static_cast<double>(EPSILON)) {
+						if (abs(shortest - abs(mid - choicesTemp[j].start)) > static_cast<double>(EPSILON)
+							&& abs(shortest - abs(mid - choicesTemp[j].end)) > static_cast<double>(EPSILON)) {
 							choicesTemp.erase(choicesTemp.begin() + j);
 							j--;
 						}
