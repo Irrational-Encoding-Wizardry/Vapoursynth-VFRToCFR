@@ -29,3 +29,9 @@ Parameters:
         If set to True, allows frame drops to acquire target framerate.
         Otherwise, throws an error if frames are dropped.
         
+## Building from sources
+You need [The Meson Build System](http://mesonbuild.com/) installed.
+```
+$ cd /path/to/src/root && mkdir build && cd build && meson --buildtype release .. && ninja
+# ninja install
+```
